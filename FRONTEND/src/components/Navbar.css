@@ -144,3 +144,20 @@
     height: 28px;
   }
 }
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 0.7rem 1rem;
+    gap: 0.6rem;
+  }
+
+  .navbar__brand-name {
+    font-size: 0.95rem;
+  }
+
+  .navbar__user-info,
+  .navbar__divider,
+  .navbar__pill {
+    display: none;
+  }
+}
