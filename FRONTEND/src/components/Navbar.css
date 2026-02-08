@@ -101,7 +101,7 @@
   .navbar {
     flex-wrap: nowrap;
     justify-content: space-between;
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1.5rem;
     height: auto;
     gap: 1rem;
   }
@@ -147,17 +147,61 @@
 
 @media (max-width: 640px) {
   .navbar {
-    padding: 0.7rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "brand menu"
+      "user user";
+    align-items: center;
+    row-gap: 0.45rem;
+    padding: 0.9rem 1rem 0.8rem;
     gap: 0.6rem;
   }
 
-  .navbar__brand-name {
-    font-size: 0.95rem;
+  .navbar__brand {
+    grid-area: brand;
+    gap: 0.8rem;
   }
 
-  .navbar__user-info,
+  .navbar__brand-name {
+    font-size: 1.05rem;
+  }
+
+  .navbar__user {
+    grid-area: user;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .navbar__user-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+  }
+
+  .navbar__user-school::before {
+    content: "|";
+    margin: 0 0.35rem 0 0.2rem;
+    opacity: 0.75;
+  }
+
   .navbar__divider,
+  .navbar__link,
+  .navbar__avatar,
   .navbar__pill {
     display: none;
+  }
+
+  .navbar__menu {
+    grid-column: 2;
+    height: 2.6rem;
+    width: 3.6rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
   }
 }
