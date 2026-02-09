@@ -54,7 +54,7 @@
   transform: translateX(-50%);
   bottom: -0.55rem;
   width: 70%;
-  height: 2px;
+  height: 4px;
   background: #1f2937;
 }
 
@@ -115,8 +115,8 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: -0.6rem;
-  width: 220px;
-  height: 2px;
+  width: 500px;
+  height: 4px;
   background: #1f2937;
 }
 
@@ -167,6 +167,10 @@
     font-size: 1.2rem;
   }
 
+  .home__panel-title::after {
+    width: 100%;
+  }
+
   .home__panel-item,
   .home__news-item {
     width: 100%;
@@ -181,6 +185,7 @@
 
   .home__info-grid {
     grid-template-columns: repeat(2, minmax(160px, 1fr));
+    gap: 1.25rem;
   }
 }
 
@@ -208,5 +213,6 @@
 
   .home__info-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 }

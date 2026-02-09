@@ -60,5 +60,6 @@
 @media (max-width: 720px) {
     .cardhome {
         transform: scale(1.10);
+        margin-bottom: 1rem;
     }
 }
