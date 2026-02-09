@@ -17,7 +17,7 @@ function Navbar() {
         <a href="#" className="navbar__link">
           <img src="../whatsapp-svgrepo-com.svg" alt="WhatsApp" />
         </a>
-        <button className="navbar__menu" aria-label="Abrir menu">menu</button>
+        <button className="navbar__menu" aria-label="Abrir menu">M</button>
         <button className="navbar__avatar">foto</button>
       </div>
     </header>
