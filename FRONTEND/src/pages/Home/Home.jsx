@@ -82,6 +82,7 @@ function Home() {
             <button className="home__news-item">Notícia 1</button>
             <button className="home__news-item">Notícia 2</button>
             <button className="home__news-item">Notícia 3</button>
+            
           </div>
         </section>
       </main>

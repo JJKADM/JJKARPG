@@ -71,6 +71,21 @@
   box-shadow: 0 1px 0 rgba(15, 23, 42, 0.2);
 }
 
+.navbar__pill,
+.navbar__menu,
+.navbar__avatar,
+.navbar__link img {
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+
+.navbar__pill:hover,
+.navbar__menu:hover,
+.navbar__avatar:hover,
+.navbar__link:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+}
+
 .navbar__menu {
   background: #f8fafc;
   color: #0f172a;

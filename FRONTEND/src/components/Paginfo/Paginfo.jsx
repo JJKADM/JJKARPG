@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
-import Cardhome from "../Cardhome/Cardhome";
+import Carrossel from "../Carrossel/Carrossel";
 import "./Paginfo.css";
 
 function Paginfo({
@@ -51,28 +51,10 @@ function Paginfo({
             </section>
 
             <section className="paginfo__related">
-                <h3 className="paginfo__related-title">{relatedTitle}</h3>
-                <div className="paginfo__related-row">
-                    <button className="paginfo__arrow" aria-label="Voltar lista">
-                        &lt;
-                    </button>
-                    <div className="paginfo__cards">
-                        {(relatedItems.length ? relatedItems : [{ title: "Raças" }, { title: "Raças" }]).map(
-                            (item, index) => (
-                                <Cardhome
-                                    key={`${item.title}-${index}`}
-                                    title={item.title}
-                                    imageSrc={item.imageSrc}
-                                    alt={item.alt || "foto"}
-                                    href={item.href || "#"}
-                                />
-                            )
-                        )}
-                    </div>
-                    <button className="paginfo__arrow" aria-label="Avançar lista">
-                        &gt;
-                    </button>
-                </div>
+                <Carrossel
+                    title={relatedTitle}
+                    items={relatedItems.length ? relatedItems : [{ title: "Raças" }, { title: "Raças" }]}
+                />
             </section>
         </div>
     );

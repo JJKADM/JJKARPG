@@ -10,7 +10,10 @@
   flex-direction: column;
   font-family: "Georgia", "Times New Roman", serif;
 }
-
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+}
 
 .home__main {
   flex: 1;
@@ -73,6 +76,16 @@
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
+}
+.home__panel-item:hover,
+.home__news-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.12);
+}
+
+.home__panel-item,
+.home__news-item {
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
 }
 
 .home__news-item {
