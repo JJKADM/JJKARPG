@@ -1,0 +1,84 @@
+.register {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: url("https://images.unsplash.com/photo-1496065187959-7f07b8353c55?q=80&w=1600&auto=format&fit=crop")
+    center/cover no-repeat;
+  font-family: "Georgia", "Times New Roman", serif;
+}
+
+.register__card {
+  background: #0f1e33;
+  color: #f8fafc;
+  padding: 2.5rem 3rem;
+  border: 2px solid rgba(248, 250, 252, 0.8);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.25);
+  width: min(420px, 90vw);
+  text-align: center;
+}
+
+.register__title-box {
+  background: #f8fafc;
+  color: #111827;
+  padding: 0.45rem 1rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  min-width: 200px;
+}
+
+.register__title {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.register__field {
+  display: grid;
+  gap: 0.4rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.register__field label {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+.register__field input,
+.register__field select {
+  padding: 0.6rem 0.75rem;
+  border: none;
+  background: #ffffff;
+  color: #111827;
+}
+
+.register__button {
+  width: 100%;
+  margin-top: 0.6rem;
+  padding: 0.65rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #f8fafc;
+  color: #111827;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.register__hint {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: rgba(248, 250, 252, 0.7);
+}
+
+.register__link {
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  text-align: left;
+  display: block;
+  margin-top: 0.8rem;
+}
+
+@media (max-width: 640px) {
+  .register__card {
+    padding: 2rem 1.5rem;
+  }
+}

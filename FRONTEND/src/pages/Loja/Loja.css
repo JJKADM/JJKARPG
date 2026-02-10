@@ -1,0 +1,104 @@
+.loja {
+	min-height: 100vh;
+	background: #e6e6e6;
+	color: #111827;
+	display: flex;
+	flex-direction: column;
+	font-family: "Georgia", "Times New Roman", serif;
+}
+
+.loja__main {
+	flex: 1;
+	padding: 4rem 4.5rem 5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+.loja__back {
+	align-self: flex-start;
+	background: #0f1e33;
+	color: #f8fafc;
+	border: none;
+	border-radius: 12px;
+	padding: 0.5rem 1.4rem;
+	font-size: 0.9rem;
+	box-shadow: 0 2px 0 rgba(15, 23, 42, 0.2);
+	cursor: pointer;
+}
+
+.loja__back:hover {
+	transform: scale(1.03);
+}
+
+.loja__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	flex-wrap: wrap;
+}
+
+.loja__title {
+	font-size: 2rem;
+	color: #1f2937;
+}
+
+.loja__subtitle {
+	font-size: 1rem;
+	color: #4b5563;
+}
+
+.loja__saldo {
+	background: #1f2937;
+	color: #f9fafb;
+	border-radius: 14px;
+	padding: 0.8rem 1.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+	min-width: 160px;
+	box-shadow: 0 6px 14px rgba(15, 23, 42, 0.2);
+}
+
+.loja__saldo-label {
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	opacity: 0.75;
+}
+
+.loja__saldo-amount {
+	font-size: 1.4rem;
+	font-weight: 600;
+}
+
+.loja__content {
+	display: flex;
+	flex-direction: column;
+	gap: 2.5rem;
+}
+
+@media (max-width: 980px) {
+	.loja__main {
+		padding: 2.5rem 1.5rem 3.5rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.loja__main {
+		padding: 2rem 1rem 3rem;
+	}
+
+	.loja__title {
+		font-size: 1.6rem;
+	}
+
+	.loja__panel {
+		padding: 1.5rem;
+	}
+
+	.loja__saldo {
+		width: 100%;
+	}
+}

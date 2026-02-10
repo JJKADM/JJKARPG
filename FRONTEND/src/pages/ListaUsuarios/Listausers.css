@@ -1,0 +1,121 @@
+.listausers {
+	min-height: 100vh;
+	background: #e6e6e6;
+	color: #111827;
+	display: flex;
+	flex-direction: column;
+	font-family: "Georgia", "Times New Roman", serif;
+}
+
+.listausers__main {
+	flex: 1;
+	padding: 3.5rem 4.5rem 4rem;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.listausers__back {
+	align-self: flex-start;
+	background: #0f1e33;
+	color: #f8fafc;
+	border: none;
+	border-radius: 12px;
+	padding: 0.5rem 1.4rem;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.listausers__header {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.listausers__title {
+	font-size: 2rem;
+	color: #1f2937;
+}
+
+.listausers__subtitle {
+	font-size: 1rem;
+	color: #4b5563;
+}
+
+.listausers__list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: 1.2rem;
+}
+
+.listausers__item {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	background: #ffffff;
+	border-radius: 16px;
+	padding: 0;
+	box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.listausers__button {
+	width: 100%;
+	border: none;
+	background: transparent;
+	padding: 1rem 1.5rem;
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	text-align: left;
+	cursor: pointer;
+}
+
+.listausers__button:hover {
+	transform: translateY(-1px);
+}
+
+.listausers__avatar {
+	width: 64px;
+	height: 64px;
+	border-radius: 999px;
+	object-fit: cover;
+	border: 2px solid #0f1e33;
+}
+
+.listausers__info {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.listausers__name {
+	font-size: 1.1rem;
+	color: #111827;
+}
+
+.listausers__tag {
+	background: #0f1e33;
+	color: #f8fafc;
+	padding: 0.2rem 0.8rem;
+	border-radius: 999px;
+	font-size: 0.8rem;
+	width: fit-content;
+}
+
+@media (max-width: 900px) {
+	.listausers__main {
+		padding: 2.5rem 1.5rem 3rem;
+	}
+}
+
+@media (max-width: 640px) {
+	.listausers__main {
+		padding: 2rem 1rem 2.5rem;
+	}
+
+	.listausers__item {
+		padding: 0.9rem 1rem;
+	}
+}

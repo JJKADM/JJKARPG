@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Navbar.css'
 
 function Navbar() {
@@ -8,9 +9,25 @@ function Navbar() {
   const menuButtonRef = useRef(null)
   const desktopMenuRef = useRef(null)
   const desktopMenuButtonRef = useRef(null)
+  const navigate = useNavigate()
 
   const toggleMenu = () => setIsMenuOpen((open) => !open)
   const toggleDesktopMenu = () => setIsDesktopMenuOpen((open) => !open)
+  const handleGoToCarteira = () => {
+    setIsMenuOpen(false)
+    setIsDesktopMenuOpen(false)
+    navigate('/carteira')
+  }
+  const handleGoToPerfil = () => {
+    setIsMenuOpen(false)
+    setIsDesktopMenuOpen(false)
+    navigate('/perfil')
+  }
+  const handleGoToListaUsuarios = () => {
+    setIsMenuOpen(false)
+    setIsDesktopMenuOpen(false)
+    navigate('/usuarios')
+  }
 
   useEffect(() => {
     if (!isMenuOpen) return
@@ -115,9 +132,13 @@ function Navbar() {
         className={`navbar__desktop-menu${isDesktopMenuOpen ? ' navbar__desktop-menu--open' : ''}`}
         ref={desktopMenuRef}
       >
-        <button className="navbar__desktop-item" type="button">Meu perfil</button>
-        <button className="navbar__desktop-item" type="button">Carteira</button>
-        <button className="navbar__desktop-item" type="button">
+        <button className="navbar__desktop-item" type="button" onClick={handleGoToPerfil}>
+          Meu perfil
+        </button>
+        <button className="navbar__desktop-item" type="button" onClick={handleGoToCarteira}>
+          Carteira
+        </button>
+        <button className="navbar__desktop-item" type="button" onClick={handleGoToListaUsuarios}>
           Lista de usuários (somente adms)
         </button>
       </div>
@@ -130,9 +151,13 @@ function Navbar() {
         <div className="navbar__mobile-avatar">
           <img src="/user.svg" alt="Usuário" />
         </div>
-        <button className="navbar__mobile-item" type="button">Meu perfil</button>
-        <button className="navbar__mobile-item" type="button">Carteira</button>
-        <button className="navbar__mobile-item" type="button">
+        <button className="navbar__mobile-item" type="button" onClick={handleGoToPerfil}>
+          Meu perfil
+        </button>
+        <button className="navbar__mobile-item" type="button" onClick={handleGoToCarteira}>
+          Carteira
+        </button>
+        <button className="navbar__mobile-item" type="button" onClick={handleGoToListaUsuarios}>
           Lista de usuários (somente adms)
         </button>
         <a className="navbar__mobile-wpp" href="#" aria-label="WhatsApp">

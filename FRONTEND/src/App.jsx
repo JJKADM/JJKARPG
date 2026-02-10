@@ -7,8 +7,15 @@ import Associacoes from './pages/Infos/Associações/Associações'
 import EstilosDeLuta from './pages/Infos/Estilos de Luta/Estilos de Luta'
 import Clas from './pages/Infos/Clãs/Clãs'
 import HospedeiroSukuna from './pages/Infos/Hospedeiro Sukuna/Hospedeiro Sukuna'
-import Loja from './pages/Infos/Loja/Loja'
+import Sukuna from './pages/Sukuna/Sukuna'
+import Loja from './pages/Loja/Loja'
+import ItemLojaPage from './pages/Loja/ItemLojaPage'
 import LoremIpsum from './pages/Infos/Lorem Ipsum/Lorem Ipsum'
+import Carteira from './pages/Carteira/Carteira'
+import Perfil from './pages/Perfil/Perfil'
+import Listausers from './pages/ListaUsuarios/Listausers'
+import Login from './pages/LoginRegistro/Login'
+import Register from './pages/LoginRegistro/Register'
 
 function App() {
   return (
@@ -22,9 +29,17 @@ function App() {
         <Route path="/infos/estilos" element={<EstilosDeLuta />} />
         <Route path="/infos/clas" element={<Clas />} />
         <Route path="/infos/sukuna" element={<HospedeiroSukuna />} />
+        <Route path="/hospedeiro" element={<Sukuna />} />
         <Route path="/infos/loja" element={<Loja />} />
+        <Route path="/loja" element={<Loja />} />
+        <Route path="/loja/produto" element={<ItemLojaPage />} />
         <Route path="/infos/lorem-1" element={<LoremIpsum />} />
         <Route path="/infos/lorem-2" element={<LoremIpsum />} />
+        <Route path="/carteira" element={<Carteira />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/usuarios" element={<Listausers />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>

@@ -39,13 +39,13 @@ function Home() {
       title: 'Hospedeiro Sukuna',
       imageSrc:
         'https://images.unsplash.com/photo-1495567720989-cebdbdd97913?q=80&w=400&auto=format&fit=crop',
-      href: '/infos/sukuna',
+      href: '/hospedeiro',
     },
     {
       title: 'Loja',
       imageSrc:
         'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=400&auto=format&fit=crop',
-      href: '/infos/loja',
+      href: '/loja',
     },
     {
       title: 'Lorem Ipsum',
