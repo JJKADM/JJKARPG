@@ -4,6 +4,9 @@ import Home from './pages/Home/Home'
 import Evolucao from './pages/Infos/Evolução/Evolução'
 import Racas from './pages/Infos/Raças/Raças'
 import Associacoes from './pages/Infos/Associações/Associações'
+import Kyoto from './pages/Infos/Associações/Kyoto/Kyoto'
+import Tokyo from './pages/Infos/Associações/Tokyo/Tokyo'
+import Outsiders from './pages/Infos/Associações/Outsiders/Outsiders'
 import EstilosDeLuta from './pages/Infos/Estilos de Luta/Estilos de Luta'
 import Clas from './pages/Infos/Clãs/Clãs'
 import HospedeiroSukuna from './pages/Infos/Hospedeiro Sukuna/Hospedeiro Sukuna'
@@ -26,6 +29,9 @@ function App() {
         <Route path="/infos/evolucao" element={<Evolucao />} />
         <Route path="/infos/racas" element={<Racas />} />
         <Route path="/infos/associacoes" element={<Associacoes />} />
+        <Route path="/infos/associacoes/kyoto" element={<Kyoto />} />
+        <Route path="/infos/associacoes/tokyo" element={<Tokyo />} />
+        <Route path="/infos/associacoes/outsiders" element={<Outsiders />} />
         <Route path="/infos/estilos" element={<EstilosDeLuta />} />
         <Route path="/infos/clas" element={<Clas />} />
         <Route path="/infos/sukuna" element={<HospedeiroSukuna />} />

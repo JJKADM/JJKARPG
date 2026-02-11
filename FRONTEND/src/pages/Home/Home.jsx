@@ -20,7 +20,7 @@ function Home() {
     {
       title: 'Associações',
       imageSrc:
-        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=400&auto=format&fit=crop',
+        'https://i.pinimg.com/736x/47/12/6b/47126b8b270e17f2da22850d65192564.jpg',
       href: '/infos/associacoes',
     },
     {

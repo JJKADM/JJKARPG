@@ -88,6 +88,7 @@
 .paginfo__subtitle {
     font-family: "Georgia", "Times New Roman", serif;
     font-size: 1.9rem;
+    font-style: italic;
     margin: 0 0 1.5rem;
 }
 
@@ -101,6 +102,18 @@
 
 .paginfo__text p {
     margin: 0 0 1rem;
+}
+
+.paginfo__list {
+    list-style: disc;
+    margin: 0 0 1rem;
+    padding: 0 1.25rem;
+    display: inline-block;
+    text-align: left;
+}
+
+.paginfo__list li {
+    margin: 0 0 0.5rem;
 }
 
 .paginfo__related {
