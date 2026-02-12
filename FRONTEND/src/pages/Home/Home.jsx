@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './Home.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Cardhome from '../../components/Cardhome/Cardhome'
-import { supabase } from '../../lib/supabaseClient'
+import { isSupabaseConfigured, supabase } from '../../lib/supabaseClient'
 
 function Home() {
   const [supabaseStatus, setSupabaseStatus] = useState('loading')
@@ -72,6 +72,11 @@ function Home() {
     let isMounted = true
 
     const checkSupabase = async () => {
+      if (!isSupabaseConfigured || !supabase) {
+        setSupabaseStatus('error')
+        setSupabaseError('Variáveis do Supabase não configuradas')
+        return
+      }
       const { error } = await supabase.auth.getSession()
       if (!isMounted) return
       if (error) {
