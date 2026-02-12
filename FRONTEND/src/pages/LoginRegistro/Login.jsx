@@ -33,7 +33,8 @@ function Login() {
 			return
 		}
 
-		const email = `${username.trim().toLowerCase()}@jjk.local`
+		const safeUsername = username.trim().toLowerCase().replace(/\s+/g, '')
+		const email = `${safeUsername}@jjk.rpg`
 
 		const { error } = await supabase.auth.signInWithPassword({
 			email,

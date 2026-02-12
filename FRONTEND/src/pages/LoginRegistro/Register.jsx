@@ -44,7 +44,8 @@ function Register() {
 
     const localizacao = localizacaoMap[associacao] ?? 1
 
-    const email = `${username.trim().toLowerCase()}@jjk.local`
+    const safeUsername = username.trim().toLowerCase().replace(/\s+/g, '')
+    const email = `${safeUsername}@jjk.rpg`
 
     const { data, error: signUpError } = await supabase.auth.signUp({
       email,
