@@ -1,13 +1,19 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import './Login.css'
 import { isSupabaseConfigured, supabase } from '../../lib/supabaseClient'
 
 function Login() {
 	const navigate = useNavigate()
+	const location = useLocation()
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
-	const [status, setStatus] = useState({ type: '', message: '' })
+	const [status, setStatus] = useState(() => {
+		const successMessage = location.state?.successMessage
+		return successMessage
+			? { type: 'success', message: successMessage }
+			: { type: '', message: '' }
+	})
 
 	const handleSubmit = async (event) => {
 		event.preventDefault()

@@ -65,11 +65,11 @@ function Register() {
       return
     }
 
-    setStatus({
-      type: 'success',
-      message: 'Conta criada com sucesso. Faça login para continuar.',
+    navigate('/login', {
+      state: {
+        successMessage: 'Conta criada com sucesso. Faça login para continuar.',
+      },
     })
-    navigate('/login')
   }
 
   return (
