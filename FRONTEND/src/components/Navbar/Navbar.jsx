@@ -28,6 +28,11 @@ function Navbar() {
     setIsDesktopMenuOpen(false)
     navigate('/usuarios')
   }
+  const handleGoHome = () => {
+    setIsMenuOpen(false)
+    setIsDesktopMenuOpen(false)
+    navigate('/')
+  }
 
   useEffect(() => {
     if (!isMenuOpen) return
@@ -89,10 +94,10 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      <div className="navbar__brand">
+      <button className="navbar__brand" type="button" onClick={handleGoHome}>
         <div className="navbar__logo-box">logo</div>
         <span className="navbar__brand-name">Escola Técnica Jujutsu</span>
-      </div>
+      </button>
 
       <div className="navbar__user">
         <div className="navbar__user-info">

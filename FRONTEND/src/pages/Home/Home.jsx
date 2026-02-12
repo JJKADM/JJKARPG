@@ -5,12 +5,28 @@ import Cardhome from '../../components/Cardhome/Cardhome'
 
 function Home() {
   const infoCards = [
+    
     {
-      title: 'Evolução',
+      title: 'Associações',
       imageSrc:
-        'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=400&auto=format&fit=crop',
-      href: '/infos/evolucao',
+        'https://i.pinimg.com/736x/47/12/6b/47126b8b270e17f2da22850d65192564.jpg',
+      href: '/infos/associacoes',
     },
+
+    {
+      title: 'Estilos de luta',
+      imageSrc:
+        'https://i.pinimg.com/1200x/4e/4d/48/4e4d4878a13892c6a30839351eea8fc8.jpg',
+      href: '/infos/estilos',
+    },
+
+    {
+      title: 'Clãs',
+      imageSrc:
+        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=400&auto=format&fit=crop',
+      href: '/infos/clas',
+    },
+
     {
       title: 'Raças',
       imageSrc:
@@ -18,22 +34,10 @@ function Home() {
       href: '/infos/racas',
     },
     {
-      title: 'Associações',
-      imageSrc:
-        'https://i.pinimg.com/736x/47/12/6b/47126b8b270e17f2da22850d65192564.jpg',
-      href: '/infos/associacoes',
-    },
-    {
-      title: 'Estilos de Luta',
+      title: 'Sistemas',
       imageSrc:
         'https://images.unsplash.com/photo-1517649763962-0c623066013b?q=80&w=400&auto=format&fit=crop',
       href: '/infos/estilos',
-    },
-    {
-      title: 'Clãs',
-      imageSrc:
-        'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=400&auto=format&fit=crop',
-      href: '/infos/clas',
     },
     {
       title: 'Hospedeiro Sukuna',
