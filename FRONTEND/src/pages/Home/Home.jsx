@@ -1,9 +1,12 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import './Home.css'
 import Navbar from '../../components/Navbar/Navbar'
 import Cardhome from '../../components/Cardhome/Cardhome'
+import { supabase } from '../../lib/supabaseClient'
 
 function Home() {
+  const [supabaseStatus, setSupabaseStatus] = useState('loading')
+  const [supabaseError, setSupabaseError] = useState('')
   const infoCards = [
     
     {
@@ -65,9 +68,40 @@ function Home() {
     },
   ]
 
+  useEffect(() => {
+    let isMounted = true
+
+    const checkSupabase = async () => {
+      const { error } = await supabase.auth.getSession()
+      if (!isMounted) return
+      if (error) {
+        setSupabaseStatus('error')
+        setSupabaseError(error.message)
+        return
+      }
+      setSupabaseStatus('ok')
+    }
+
+    checkSupabase()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
   return (
     <div className="home">
       <Navbar />
+      <div className="home__supabase-status">
+        <span className={`home__supabase-pill home__supabase-pill--${supabaseStatus}`}>
+          {supabaseStatus === 'loading' && 'Supabase: conectando...'}
+          {supabaseStatus === 'ok' && 'Supabase: conectado'}
+          {supabaseStatus === 'error' && 'Supabase: erro na conexão'}
+        </span>
+        {supabaseStatus === 'error' && (
+          <span className="home__supabase-error">{supabaseError}</span>
+        )}
+      </div>
 
       <main className="home__main">
         <section className="home__panel home__panel--left">

@@ -14,3 +14,19 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Supabase setup (Vercel + Vite)
+
+1. Create a Supabase project and copy the **Project URL** and **anon public key**.
+2. In Vercel, add these environment variables:
+	- `VITE_SUPABASE_URL`
+	- `VITE_SUPABASE_ANON_KEY`
+3. For local development, copy `.env.example` to `.env` and fill in the values.
+
+### Usage
+
+Import the client from [src/lib/supabaseClient.js](src/lib/supabaseClient.js):
+
+```js
+import { supabase } from "./lib/supabaseClient";
+```
