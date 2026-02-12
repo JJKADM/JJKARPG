@@ -8,6 +8,7 @@ function Login() {
 	const location = useLocation()
 	const [username, setUsername] = useState('')
 	const [password, setPassword] = useState('')
+	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [status, setStatus] = useState(() => {
 		const successMessage = location.state?.successMessage
 		return successMessage
@@ -17,15 +18,18 @@ function Login() {
 
 	const handleSubmit = async (event) => {
 		event.preventDefault()
-		setStatus({ type: '', message: '' })
+		setStatus({ type: 'info', message: 'Enviando...' })
+		setIsSubmitting(true)
 
 		if (!isSupabaseConfigured || !supabase) {
 			setStatus({ type: 'error', message: 'Supabase não configurado.' })
+			setIsSubmitting(false)
 			return
 		}
 
 		if (!username || !password) {
 			setStatus({ type: 'error', message: 'Preencha usuário e senha.' })
+			setIsSubmitting(false)
 			return
 		}
 
@@ -38,6 +42,7 @@ function Login() {
 
 		if (error) {
 			setStatus({ type: 'error', message: error.message })
+			setIsSubmitting(false)
 			return
 		}
 
@@ -74,12 +79,21 @@ function Login() {
 					{status.message && (
 						<p
 							className="login__status"
-							style={{ color: status.type === 'error' ? '#b91c1c' : '#166534' }}
+							style={{
+								color:
+									status.type === 'error'
+										? '#b91c1c'
+										: status.type === 'info'
+											? '#1f2937'
+											: '#166534',
+							}}
 						>
 							{status.message}
 						</p>
 					)}
-					<button className="login__button" type="submit">Iniciar sessão</button>
+					<button className="login__button" type="submit" disabled={isSubmitting}>
+						{isSubmitting ? 'Entrando...' : 'Iniciar sessão'}
+					</button>
 				</form>
 				<a className="login__link" href="/register">Não tem acesso?</a>
 			</div>

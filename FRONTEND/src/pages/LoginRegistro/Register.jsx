@@ -10,24 +10,29 @@ function Register() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
   const [associacao, setAssociacao] = useState('')
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [status, setStatus] = useState({ type: '', message: '' })
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    setStatus({ type: '', message: '' })
+    setStatus({ type: 'info', message: 'Enviando...' })
+    setIsSubmitting(true)
 
     if (!isSupabaseConfigured || !supabase) {
       setStatus({ type: 'error', message: 'Supabase não configurado.' })
+      setIsSubmitting(false)
       return
     }
 
     if (!nome || !username || !password) {
       setStatus({ type: 'error', message: 'Preencha todos os campos.' })
+      setIsSubmitting(false)
       return
     }
 
     if (password !== confirmPassword) {
       setStatus({ type: 'error', message: 'As senhas não coincidem.' })
+      setIsSubmitting(false)
       return
     }
 
@@ -54,6 +59,7 @@ function Register() {
 
     if (signUpError) {
       setStatus({ type: 'error', message: signUpError.message })
+      setIsSubmitting(false)
       return
     }
 
@@ -62,6 +68,7 @@ function Register() {
         type: 'error',
         message: 'Não foi possível obter o usuário. Verifique o email de confirmação.',
       })
+      setIsSubmitting(false)
       return
     }
 
@@ -138,12 +145,21 @@ function Register() {
           {status.message && (
             <p
               className="register__status"
-              style={{ color: status.type === 'error' ? '#b91c1c' : '#166534' }}
+              style={{
+                color:
+                  status.type === 'error'
+                    ? '#b91c1c'
+                    : status.type === 'info'
+                      ? '#1f2937'
+                      : '#166534',
+              }}
             >
               {status.message}
             </p>
           )}
-          <button className="register__button" type="submit">Registrar</button>
+          <button className="register__button" type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Registrando...' : 'Registrar'}
+          </button>
         </form>
         <a className="register__link" href="/login">Já tem acesso?</a>
       </div>
